@@ -1,0 +1,11 @@
+<!-- app.component.html -->
+<div *ngIf="showElement">This element is conditionally displayed</div>
+<button (click)="toggleElement()">Toggle Element</button>
+<!-- app.component.html -->
+<!-- <ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul> -->
+<!-- app.component.html -->
+// app.component.html
+<p [appHighlight]="highlightColor">This text is highlighted with a dynamic color</p>
+<button (click)="changeColor()">Change Color</button>
