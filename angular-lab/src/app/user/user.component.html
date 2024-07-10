@@ -1,0 +1,14 @@
+<h1>{{ name }}</h1>
+<select (change)="changeRole($event.target.value)">
+  <option value="admin">Admin</option>
+  <option value="user">User</option>
+</select>
+<div [ngSwitch]="userRole">
+  <p *ngSwitchCase="'admin'">You are an admin</p>
+  <p *ngSwitchCase="'user'">You are a user</p>
+  <p *ngSwitchDefault>Select a role</p>
+</div>
+<h1 appHighlight>{{ name }}</h1>
+<img [src]="imageUrl" alt="User Image" appHighlight>
+<button (click)="changeName()">Change Name</button>
+<input [(ngModel)]="name" placeholder="Enter name">
