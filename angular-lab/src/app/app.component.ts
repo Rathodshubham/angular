@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  providers: [DataService]
 })
-export class AppComponent {
-  parentMessage = "Message from parent";
+export class AppComponent implements OnInit {
+  data: Array<{ id: number, name: string }> = [];
 
-  receiveMessage(message: string) {
-    this.parentMessage = message
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.data = this.dataService.getMockData();
   }
 }
