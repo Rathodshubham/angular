@@ -1,0 +1,6 @@
+<div>
+    <button (click)="toggleVisibility()">Toggle Visibility</button>
+    <div *ngIf="isVisible" @fadeInOut>Fade In and Out</div>
+    <div *ngIf="isVisible" @slideInOut>Slide In and Out</div>
+  </div>
+  

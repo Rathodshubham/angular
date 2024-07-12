@@ -3,11 +3,12 @@ import { RouterOutlet,RouterLink  } from '@angular/router';
 import { DataService } from './data.service';
 import { CommonModule } from '@angular/common';
 import { FormsComponent } from './forms/forms.component';
+import { AnimationsComponent } from "./animations/animations.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsComponent, RouterLink],
+  imports: [RouterOutlet, CommonModule, FormsComponent, RouterLink, AnimationsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [DataService]
