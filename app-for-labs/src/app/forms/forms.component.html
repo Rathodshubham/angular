@@ -1,0 +1,41 @@
+<!-- Lab 70: Forms -->
+<!-- <h2>Template-Driven Form</h2>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" ngModel required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" ngModel required email>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+<div *ngIf="submitted">
+  <h3>Form Data:</h3>
+  <pre>{{ formData | json }}</pre>
+</div> -->
+
+<h2>Reactive Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      <small *ngIf="form.get('name')?.errors?.['required']">Name is required.</small>
+    </div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      <small *ngIf="form.get('email')?.errors?.['required']">Email is required.</small>
+      <small *ngIf="form.get('email')?.errors?.['email']">Invalid email format.</small>
+    </div>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+<div *ngIf="submitted">
+  <h3>Form Data:</h3>
+  <pre>{{ form.value  }}</pre>
+</div>
