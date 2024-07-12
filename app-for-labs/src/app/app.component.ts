@@ -6,11 +6,13 @@ import { FormsComponent } from './forms/forms.component';
 import { AnimationsComponent } from "./animations/animations.component";
 import { LoginComponent } from "./login/login.component";
 import { ProtectedComponent } from "./protected/protected.component";
+import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsComponent, RouterLink, AnimationsComponent, LoginComponent, ProtectedComponent],
+  imports: [UnlessDirective, HighlightDirective , RouterOutlet, CommonModule, FormsComponent, RouterLink, AnimationsComponent, LoginComponent, ProtectedComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [DataService]
@@ -18,6 +20,7 @@ import { ProtectedComponent } from "./protected/protected.component";
 })
 export class AppComponent  {
   data: Array<{ id: number, name: string }> = [];
+  showElement: boolean = true;
 
   // constructor(private dataService: DataService) {}
 

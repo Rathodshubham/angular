@@ -16,5 +16,14 @@
 <!-- Lab 80: Angular Animations -->
 <app-animations></app-animations>
 <!-- <app-login></app-login> -->
- <!-- <app-protected></app-protected> -->
+<!-- <app-protected></app-protected> -->
 
+<div appHighlight defaultColor="lightblue">
+  Hover over this text to see the background color change.
+</div>
+<div>
+  <button (click)="showElement = !showElement">Toggle Element</button>
+  <div *appUnless="showElement">
+    This element is conditionally rendered based on the showElement variable.
+  </div>
+</div>
