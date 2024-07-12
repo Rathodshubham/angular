@@ -1,0 +1,22 @@
+.protected-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .protected-container h2 {
+    text-align: center;
+  }
+  
+  .protected-container p {
+    text-align: center;
+  }
+  
+  .protected-container button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+  }
+  
